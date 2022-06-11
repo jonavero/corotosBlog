@@ -1,16 +1,89 @@
-<h1>Posts</h1>
+<div class="container">
+  <div class="row">
 
-<%@post.each do |post| %>
-  <h1><%=post.title %></h1>
-  <p><%=post.body %></p>
+    <div class="col-md-6">
+      <h2 class="titlePost">Posts</h2>
+    </div>
 
-<% end %>
-<ul class=" pagination">
-  <%= will_paginate(@post, :renderer => WillPaginate::ActionView::LinkRenderer) %>
-</ul>
+    <div class="col-md-6 inputSearch">
+
+      <%= form_tag root_path, method: :get, :class => 'formulario-buscar titlePost' do %>
+        <%= text_field_tag :search, params[:search], :class => 'inputS fa fa-search', :placeholder => 'Buscar por texto' %>
+        <%= submit_tag '', :class => 'fa fa-search noBorden' %>
+      <% end %>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <% if @post.empty? %>
+      <div class="noFound">
+    <h2>Ooops...</h2>
+        <p>registro no encontrado</p>
+      </div>
+      <%end %>
+    <% @post.each do |post| %>
+      <%=link_to show_path(post) do %>
+      <% if (post.id.to_i % 2) == 0 %>
+          <div class="col-md-6 card">
+            <div class="card2">
+            <%= image_tag('imagen.png', size: "250x250",class:"img-rounded imagen") %>
+            <h3><%= post.title %></h3>
+              <p class="category"> <%=post.category.description %>  </p>
+              <p> <%=post.label.description %> </p>
+
+              <div class="row timePost">
+                <div class="col-md-6 time1">
+                  <p><strong>Creado: </strong> <%=post.created_at.strftime("%-d/%-m/%y: %H:%M ") %></p>
+
+                </div>
+                <div class="col-md-6 time2">
+                  <p><strong>Actualizado: </strong> <%=post.updated_at.strftime("%-d/%-m/%y: %H:%M") %></p>
+
+                </div>
+              </div>
+
+
+            </div>
+        </div>
+      <% else %>
+        <div class="col-md-6 card">
+          <div class="card2">
+          <%= image_tag('rails.png', size: "250x250",class: "img-rounded imagen")%>
+            <h3><%= post.title %></h3>
+            <p class="categoryImpar"> <%=post.category.description %>  </p>
+            <p> <%=post.label.description %> </p>
+
+            <div class="row timePost">
+              <div class="col-md-6 time1">
+                <p><strong> Creado:</strong> <%=post.created_at.strftime("%-d/%-m/%y: %H:%M ") %></p>
+
+              </div>
+              <div class="col-md-6 time2">
+                <p> <strong> Actualizado:</strong> <%=post.updated_at.strftime("%-d/%-m/%y: %H:%M") %></p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+        <%end %>
+    <% end %>
+  </div>
+
+    <div class="paginacion ">
+      <ul class=" pagination">
+        <%= will_paginate @post, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+      </ul>
+    </div>
+
+
 </div>
 
 
-  <div class="digg_pagination">
-    <%= will_paginate @post %>
-  </div>
+
+
+
+
+
+

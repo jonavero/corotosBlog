@@ -1,0 +1,14 @@
+
+<div class="container">
+  <div class="banner">
+    <%= image_tag ('img.png')  %>
+  </div>
+  <h2 style="text-align: center"> <%=@post.title %></h2>
+  <div class="contenido">
+  <p><%=simple_format (@post.body) %></p>
+  <div class="row">
+    <div class="col-md-6"><strong>Creado: </strong> <%=@post.created_at.strftime("%-d/%-m/%y: %H:%M ") %> </div>
+    <div class="col-md-6"><strong>Actualizado: </strong> <%=@post.updated_at.strftime("%-d/%-m/%y: %H:%M ") %></div>
+  </div>
+  </div>
+</div>

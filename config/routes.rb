@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   #
   # Post route
-  get '/index' => 'posts#index'
+  root 'posts#index'
+  get '/post/:id' => "posts#show", as: :show
 end

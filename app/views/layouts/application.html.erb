@@ -12,8 +12,44 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+
+  <div class="principal">
+     <header class="navbar">
+       <div class="container">
+         <div class="row align-list">
+           <div class="col-md-8 logo">
+             <h1 class="font-bold text-4xl text-blue-500 f"><%=link_to 'CorotosBlog',root_path %></h1>
+           </div>
+           <div class="col-md-4">
+             <ul class="list">
+               <li>
+                 <%= link_to 'Posts' ,root_path %>
+               </li>
+               <li>
+                 <%= link_to 'Login',new_admin_user_session_path %>
+               </li>
+             </ul>
+           </div>
+         </div>
+       </div>
+     </header>
+  </div>
+
+
+
+
+
+    <main class="container mx-auto mt-28 px-5 flex ">
       <%= yield %>
     </main>
   </body>
+
+
+  <footer class="">
+    <div class="footer">
+    <p>Autor: Jonathan Castillo<br>
+      <a href="https://github.com/jonavero/hbtoons/tree/main/app">Github: jonavero</a></p>
+    </div>
+  </footer>
+
 </html>

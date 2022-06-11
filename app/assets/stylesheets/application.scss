@@ -10,8 +10,280 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
  */
+
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+.list li{
+  display:inline;
+  padding-left:5px;
+  padding-right:5px;
+  margin-top:10px ;
+}
+
+.list{
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.principal {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  height: 96px;
+}
+
+.navbar{
+  margin-bottom: 0;
+  z-index: 1999;
+  position: fixed;
+  width: 100%;
+  padding: 1rem;
+
+}
+
+.principal .navbar {
+  background: #1d477a;
+}
+
+.principal h1 a,.list li a{
+  color: #ffffff;
+  text-decoration: none;
+
+}
+
+.titlePost{
+  color: #1d477a;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.list li a{
+ text-decoration: none;
+  padding-right: 25px;
+
+}
+.list li a:hover{
+  text-decoration: none;
+  padding-right: 25px;
+  background-color:#facc00 ;
+  color: #2E2F30;
+  padding:50px 7px 35px 7px  ;
+
+}
+
+.align-list{
+  align-items: center;
+}
+
+.navbar .logo {
+
+font-size: 2rem;
+text-transform: uppercase;
+font-weight: 900;
+line-height: 0;
+margin: 0;
+padding: 0;
+z-index: 3;
+}
+
+.list {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 20px;
+  z-index: 3;
+}
+
+.card {
+    padding: 10px;
+
+}
+
+body{
+  background: #f3f4f6;
+  width: 100%;
+}
+
+main{
+  background: #ffffff;
+  padding: 50px ;
+
+}
+
+.footer{
+  text-align: center;
+  margin-top: 25px;
+  background: #1d477a;
+  padding: 25px 0px 25px 0;
+  width: 100%;
+}
+
+.footer p{
+  color: #ffffff;
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .card {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+.card2 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.imagen{
+  display: block;
+  margin: 0px auto;
+}
+
+.card:hover{
+  box-shadow: 1px 8px 20px grey;
+  -webkit-transition:  box-shadow .6s ease-in;
+}
+
+.paginacion{
+  display: flex;
+  justify-content: center;
+}
+
+.paginacion ul li a{
+  background:#1d477a;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.paginacion ul li a:hover{
+  background: #facc00;
+  color: #fff;
+}
+
+.paginacion ul li a{
+  margin:  5px;
+  color: #fff;
+}
+
+@media only screen and (max-width:400px){
+  .paginacion ul li a{
+    margin:  0px;
+  }
+}
+
+.category {
+  background: #2563eb;
+  border-radius: 5px;
+  width: 35%;
+  color: #ffffff;
+  margin-left: 160px;
+}
+.category {
+  background: #2563eb;
+  border-radius: 5px;
+  width: 30%;
+  color: #ffffff;
+  margin-left: 180px;
+  padding: 10px;
+}
+
+.categoryImpar {
+  background: #facc00;
+  border-radius: 5px;
+  width: 30%;
+  color: #ffffff;
+  margin-left: 180px;
+  padding: 10px;
+
+}
+
+form.formulario-buscar .inputS{
+  background:none;
+  border-radius:12px  ;
+  outline: none;
+  color:#2563eb;
+  font-style: italic;
+  font-size: 1.4rem;
+  width: 550px;
+  height: 40px;
+  padding: 25px;
+  text-align: center;
+
+}
+form.formulario-buscar > .inputS::-webkit-input-placeholder{
+  font-style: italic;
+  color: #2563eb;
+}
+
+form.formulario-buscar button{
+  background: none;
+  border: none;
+  color: #2563eb;
+
+}
+
+.noFound{
+  width: 100%;
+  text-align: center;
+
+}
+
+.noFound h2,p{
+  font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+  font-style: italic;
+  color: #2563eb;
+
+}
+
+.noFound p{
+  font-size: 16px;
+}
+
+.timePost .time1 p{
+  text-decoration-line: underline;
+  text-decoration-color: green;
+  -webkit-text-decoration-color:#facc00 ;
+}
+
+.timePost .time2 p {
+  text-decoration-line: underline;
+  text-decoration-color: #facc00;
+  -webkit-text-decoration-color: green ;
+}
+
+.banner  {
+  border-radius:5px;
+  border: 1px solid #999;
+  padding:13px;
+
+}
+
+.contenido{
+  margin: 25px 100px 25px 100px;
+  text-align: center;
+
+}
+
+.contenido p{
+
+font-size: 18px;
+}
+
 
 
