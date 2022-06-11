@@ -1,0 +1,16 @@
+<h1>Posts</h1>
+
+<%@post.each do |post| %>
+  <h1><%=post.title %></h1>
+  <p><%=post.body %></p>
+
+<% end %>
+<ul class=" pagination">
+  <%= will_paginate(@post, :renderer => WillPaginate::ActionView::LinkRenderer) %>
+</ul>
+</div>
+
+
+  <div class="digg_pagination">
+    <%= will_paginate @post %>
+  </div>
