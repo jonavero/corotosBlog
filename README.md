@@ -6,9 +6,17 @@ application up and running.
 Things you may want to cover:
 
 * Rails Version "~> 7.0.3"
-* Ruby version 
+* Ruby version  "3.0.3"
 
-* System dependencies
+
+
+#Gemas utilizadas 
+- will_paginate, '~> 3.3'
+- bootstrap-will_paginate
+- bootstrap-sass
+- font-awesome-rails
+- activeadmin
+- devise
 
 * Configuration
 
