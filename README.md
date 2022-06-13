@@ -24,6 +24,7 @@ Things you may want to cover:
 - activeadmin
 - devise
 
+# Otras configuraciones 
 * Configuration
 
 * Database creation

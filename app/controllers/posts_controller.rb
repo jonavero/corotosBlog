@@ -3,9 +3,11 @@ class PostsController < ApplicationController
   def index
 
     @post= if params[:search]
-             Post.where('"title" LIKE ? ',)
              Post.where('"title" LIKE ? or "body" LIKE ?',"%#{params[:search]}%","%#{params[:search]}%").paginate(page: params[:page], per_page: 4)
+            elsif params[:searchCateg]
+              Post.where(category_id: params[:searchCateg][:searchCateg]).paginate(page: params[:page], per_page: 4)
            else
+
              Post.paginate(page: params[:page], per_page: 4)
            end
 

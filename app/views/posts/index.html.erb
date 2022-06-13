@@ -1,15 +1,19 @@
 <div class="container">
   <div class="row">
+    <h2 class="titlePost">Posts</h2>
 
-    <div class="col-md-6">
-      <h2 class="titlePost">Posts</h2>
-    </div>
-
-    <div class="col-md-6 inputSearch">
-
-      <%= form_tag root_path, method: :get, :class => 'formulario-buscar titlePost' do %>
+    <div class="col-md-4 inputSearch">
+      <%= form_tag root_path, method: :get, :class => 'formulario-buscar  ' do %>
         <%= text_field_tag :search, params[:search], :class => 'inputS fa fa-search', :placeholder => 'Buscar por texto' %>
         <%= submit_tag '', :class => 'fa fa-search noBorden' %>
+      <% end %>
+    </div>
+
+    <div class="col-md-8 ">
+
+      <%= form_tag root_path, method: :get, :class => ' filterPost' do %>
+        <%= collection_select :searchCateg, :searchCateg, Category.all, :id, :description,    {include_blank: true}, { class: "searchCategory"} %>
+        <%= submit_tag 'Buscar', :class => 'fa fa-search noBorden' %>
       <% end %>
 
     </div>
